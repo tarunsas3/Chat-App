@@ -1,0 +1,285 @@
+* {
+  font-family: "cascadia code";
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+.register,
+.login {
+  background: #dde1e7;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  form {
+    width: 25%;
+    background: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    border-radius: 1rem;
+    h3 {
+      font-size: 30px;
+    }
+    h6 {
+      margin-bottom: 1rem;
+      font-size: 15px;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    input {
+      outline: none;
+      outline: none;
+      border: 1px solid lightblue;
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+    .profilePicInput {
+      border: 2px dashed gray;
+      padding: 0.5rem;
+    }
+    .submit {
+      background: green;
+      color: white;
+      font-weight: bolder;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      .imageUpload {
+        font-size: 50px;
+      }
+    }
+  }
+}
+
+.Home {
+  background: #dde1e7;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .leftSide {
+    display: flex;
+    background: #fff;
+    border-radius: 1rem;
+    height: 90vh;
+    width: 90vw;
+    overflow: hidden;
+    .sideBar {
+      flex: 1;
+      border-right: 3px solid #dde1e7;
+      padding: 0rem 0.5rem;
+      .header {
+        padding: 1rem 0.5rem;
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          justify-content: space-between;
+          .userInfo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+            h6 {
+              font-size: 25px;
+            }
+          }
+          .icons {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            .newConversationIcon {
+              font-size: 25px;
+            }
+            .logoutIcon {
+              font-size: 25px;
+            }
+          }
+        }
+      }
+      .search,
+      .chats {
+        .searchInput {
+          padding: 1rem 0.5rem;
+          input {
+            padding: 0.5rem;
+            border: 1px solid lightblue;
+            outline: none;
+            border-radius: 0.3rem;
+            width: 95%;
+            height: 20px;
+          }
+        }
+        .chatsResult,
+        .searchResult {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 1.1rem 0.5rem;
+          cursor: pointer;
+          &:hover {
+            background: #111;
+            color: #fff;
+            border-radius: 1rem;
+          }
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+          .userInfo,
+          .searchedUserInfo {
+            h3 {
+              font-size: 20px;
+            }
+            p {
+              font-weight: 500;
+              color: inherit;
+              font-style: italic;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+    .chat {
+      flex: 2;
+      .splashScreen {
+        display: flex;
+        width: fit-content;
+        margin: 8rem 1rem;
+        flex-direction: column;
+        gap: 2rem;
+        img {
+          margin-left: 16rem;
+          width: 350px;
+          object-fit: cover;
+        }
+        h3 {
+          margin-left: 12rem;
+          font-size: 40px;
+          font-style: italic;
+        }
+        p {
+          font-weight: bolder;
+          font-style: italic;
+          margin-left: 4rem;
+        }
+        span {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-top: 5.5rem;
+          margin-left: 12rem;
+          font-weight: bolder;
+          font-style: italic;
+        }
+      }
+      .chatInfo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        border-bottom: 1px solid #dde1e7;
+        margin-top: 0.3rem;
+        h3 {
+          font-size: 25px;
+        }
+        .infoIcons {
+          display: flex;
+          gap: 1rem;
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
+      .messages {
+        padding: 1rem;
+        height: calc(100% - 185px);
+        overflow: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        .message {
+          display: flex;
+          gap: 1rem;
+          .messageInfo {
+            display: flex;
+            margin-bottom: 20px;
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+          .messageContent {
+            max-width: 70%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            p {
+              background: lightblue;
+              padding: 1rem;
+              margin: 1rem 0rem 0rem 0rem;
+              border-radius: 0rem 1rem 1rem 1rem;
+              max-width: max-content;
+              font-weight: 500;
+            }
+            img {
+              width: 50%;
+            }
+          }
+          &.owner {
+            flex-direction: row-reverse;
+            .messageContent {
+              align-items: flex-end;
+              p {
+                background: lightgreen;
+                color: #111;
+              }
+            }
+          }
+        }
+      }
+      .input {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        margin: 0.5rem 0rem 0.5rem 0rem;
+        height: 30px;
+        .send {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          font-size: 25px;
+          cursor: pointer;
+          padding: 0.5rem;
+        }
+        input {
+          width: 85%;
+          outline: none;
+          border: 1px solid lightblue;
+          padding: 1rem;
+          border-radius: 0.5rem;
+        }
+      }
+    }
+  }
+}
